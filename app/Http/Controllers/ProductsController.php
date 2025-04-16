@@ -19,7 +19,7 @@ class ProductsController extends Controller
                                 ->orWhereHas("brand", function($query) use ($query_search){
                                     $query->where("name", "LIKE", "%" . $query_search . "%");
                                 });
-        $data = $data_in_query->paginate(10);
+        $data = $data_in_query->paginate(10)->withQueryString();
         return view("admin.products.index", compact("title", "data"));
     }
 

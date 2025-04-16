@@ -41,7 +41,7 @@
           @foreach ($data as $index => $product)
             <tr class="border-b border-gray-200 text-[#222]">
               <td class="px-6 py-4">
-                {{ $index + 1 }}
+                {{ (($data->currentPage() - 1) * 10) + ($index + 1) }}
               </td>
               <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
                 {{ $product->name }}
@@ -71,6 +71,11 @@
         </tbody>
       </table>
     </div>
+
+    <div class="my-10">
+      {{ $data->links('pagination::tailwind') }}
+    </div>
+
   </section>
 </x-admin-layout>
 

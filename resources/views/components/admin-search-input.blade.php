@@ -8,7 +8,7 @@
       name="q"
       placeholder="Search {{ $placeholder }}" 
       value="{{ request('q') }}"
-      class="flex-1 py-3 outline-none text-base text-[#222]">
+      class="flex-1 py-3 outline-none border-none focus:ring-0 text-base text-[#222]">
   </form>
   @if (request("q"))
     <button type="button" class="btn-reset bg-red-500 py-3 px-5 text-white cursor-pointer rounded-md hover:bg-red-600">Reset</button>
